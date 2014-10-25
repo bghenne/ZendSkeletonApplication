@@ -1,4 +1,7 @@
 <?php
+
+namespace Application;
+
 /**
  * Zend Framework (http://framework.zend.com/)
  *
@@ -60,6 +63,10 @@ return array(
         'aliases' => array(
             'translator' => 'MvcTranslator',
         ),
+        'factories' => array(
+            'Application\Service\UserService' => 'Application\Service\Factory\UserServiceFactory'
+        )
+
     ),
     'translator' => array(
         'locale' => 'en_US',
@@ -99,4 +106,20 @@ return array(
             ),
         ),
     ),
+
+    // Doctrine
+    'doctrine' => array(
+        'driver' => array(
+            __NAMESPACE__ . '_driver' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Model')
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    __NAMESPACE__ . '\Model' => __NAMESPACE__ . '_driver'
+                )
+            )
+        )
+    )
 );
