@@ -13,6 +13,13 @@
         "doctrine/doctrine-orm-module": "0.*",
         "zf-commons/zfc-user": "*",
         "zf-commons/zfc-user-doctrine-orm": "0.1.*",
-        "zendframework/zend-developer-tools": "dev-master"
+        "zendframework/zend-developer-tools": "dev-master",
+        "phpunit/php-code-coverage": "3.0.*@dev",
+        "phpunit/phpunit": "4.5.*@dev",
+        "phpunit/phpunit-mock-objects": "2.4.*@dev",
+        "sebastian/global-state": "1.0.*@dev",
+        "sebastian/comparator": "1.1.*@dev",
+        "phpspec/prophecy": "1.2.*@dev",
+        "phpspec/prophecy-phpunit": "1.0.*@dev"
     }
 }

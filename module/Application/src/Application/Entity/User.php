@@ -4,14 +4,14 @@
  * @author Bidoum
  *
  */
-namespace Application\Model;
+namespace Application\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use ZfcUser\Entity\UserInterface;
 
 /**
  * Représentation d'un utilisateur
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserRepository")
  * @ORM\Table(name="user")
  *
  * @author

@@ -53,6 +53,17 @@ return array(
                     ),
                 ),
             ),
+            'test'  => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/test',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller'    => 'Test',
+                        'action'        => 'test',
+                    ),
+                ),
+            )
         ),
     ),
     'service_manager' => array(
@@ -80,7 +91,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Test' => 'Application\Controller\TestController'
         ),
     ),
     'view_manager' => array(
@@ -113,11 +125,11 @@ return array(
             __NAMESPACE__ . '_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Model')
+                'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
             ),
             'orm_default' => array(
                 'drivers' => array(
-                    __NAMESPACE__ . '\Model' => __NAMESPACE__ . '_driver'
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
                 )
             )
         )
